@@ -36,33 +36,23 @@ public class PieceSettings extends javax.swing.JFrame {
     
     public PieceSettings() throws FileNotFoundException, IOException{
         initComponents();
-        setImages();
         // default filepaths
-        wPawnPath = "./resources/pikachu.png";
-        wKingPath = "./resources/raichu.png";
-        bPawnPath = "./resources/magikarp.png";
-        bKingPath = "./resources/gyarados.png";
+        wPawnPath = "./resources/whitePawn.gif";
+        wKingPath = "./resources/whiteKing.gif";
+        bPawnPath = "./resources/blackPawn.gif";
+        bKingPath = "./resources/blackKing.gif";
+        setImages();
     }
     
     // look and feel settings
     
-    public void setImages() throws FileNotFoundException, IOException {
-        // use filepaths from files
-        FileReader fr = new FileReader("./save/piecePaths.txt");
-        BufferedReader br = new BufferedReader(fr);
+    public void setImages() {
+           
+        addIcon(wPawnPath, whitePawnHolder);
+        addIcon(wKingPath, whiteKingHolder);
+        addIcon(bPawnPath, blackPawnHolder);
+        addIcon(bKingPath, blackKingHolder);
         
-        String paths[] = new String[4];
-        for (int i = 0; i < 4; i++) {
-            String str = br.readLine();
-            paths[i] = str;
-        }
-        
-        addIcon(paths[0], whitePawnHolder);
-        addIcon(paths[1], whiteKingHolder);
-        addIcon(paths[2], blackPawnHolder);
-        addIcon(paths[3], blackKingHolder);
-        
-        fr.close(); br.close();
     }
     
     public void addIcon(String path, JButton bt) { // resize and set Icon
