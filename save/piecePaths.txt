@@ -1,4 +1,4 @@
 ./resources/whitePawn.gif
 ./resources/whiteKing.gif
 ./resources/blackPawn.gif
-./resources/blackKink.gif
+./resources/blackKing.gif
